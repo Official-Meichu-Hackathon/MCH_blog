@@ -1,0 +1,161 @@
+{
+  "hero": {
+    "title": "Opening Meichu",
+    "subtitle": "Discover Taiwan's Most Influential Student Hackathon",
+    "tagline": "13th Edition — 2025 Hsinchu x Meichu Hackathon",
+    "scroll": "Scroll to explore"
+  },
+  "intro": {
+    "heading": "Between Two Universities, A Hackers' Gathering",
+    "body": "Every October, a special energy surges through Hsinchu's autumn breeze — hundreds of university students, makers, and developers from across Taiwan gather together, building impressive works in 24 hours. This is no ordinary competition. Here, exchange outweighs competition, and inspiration outweighs prize money. This is the Meichu Hackathon.",
+    "highlight": "Exchange outweighs competition, inspiration outweighs prize money."
+  },
+  "whatIs": {
+    "heading": "What is Meichu Hackathon?",
+    "mei": {
+      "title": "Mei",
+      "school": "National Tsing Hua University",
+      "origin": "Commemorating former NTHU President Mei Yi-Qi"
+    },
+    "chu": {
+      "title": "Chu",
+      "school": "National Yang Ming Chiao Tung University",
+      "origin": "Commemorating former NYCU President Ling Zhu-Ming"
+    },
+    "hackathon": {
+      "title": "Hackathon",
+      "hack": "Hack — an exploratory programming process; the hacker spirit of valuing freedom and solving problems",
+      "marathon": "Marathon — sustained creative endurance"
+    },
+    "philosophy": "Meichu Hackathon is not a profit-driven competition. It embraces hacker spirit — valuing freedom and a passion for problem-solving. Anyone who boldly challenges themselves and focuses on their craft can be called a hacker, regardless of profession. The organization emphasizes innovation, efficiency, and teamwork, and prioritizes exchange over competition — making it more of a collaborative gathering than a cutthroat contest.",
+    "values": {
+      "innovation": "Innovation",
+      "efficiency": "Efficiency",
+      "teamwork": "Teamwork",
+      "exchange": "Exchange > Competition"
+    }
+  },
+  "origin": {
+    "heading": "2013: Where It All Began",
+    "story": "In 2013, a group participated in a one-day hackathon that included Professor Wu Yi-Cheng of NCTU's CS department, Jserv with a heart-rate measurement band, and a senior who provided a company API. That moment, an idea sparked: \"What if we collaborated with real companies?\" That small seed of inspiration led to the first Meichu Hackathon.",
+    "quote": "What if we collaborated with real companies?",
+    "quoteAuthor": "The spark of 2013"
+  },
+  "timeline": {
+    "heading": "Thirteen Years of Evolution",
+    "years": {
+      "2013": {
+        "title": "Founded",
+        "desc": "Meichu Hackathon was born, co-organized by students from NTHU and NYCU, starting a hacker tradition."
+      },
+      "2014": {
+        "title": "Taking Root",
+        "desc": "The second edition saw maturing competition formats, established corporate partnerships, and steady growth in participants."
+      },
+      "2015": {
+        "title": "Expanding",
+        "desc": "More corporate partners joined, with increasingly diverse challenges. Participants surpassed one hundred."
+      },
+      "2016": {
+        "title": "Deepening",
+        "desc": "Continued introduction of new corporate partners with challenges closer to industry needs and refined competition formats."
+      },
+      "2017": {
+        "title": "Milestone",
+        "desc": "The fifth edition marked a milestone as scale continued to grow and Meichu Hackathon built recognition among students."
+      },
+      "2018": {
+        "title": "Maturing",
+        "desc": "Competition formats and scale stabilized. Pre-event activities began emerging, laying groundwork for future diversification."
+      },
+      "2019": {
+        "title": "Crossing Boundaries",
+        "desc": "Partnered with Hsinchu City Government to establish the Maker Group for social issues; launched pre-event workshops; venue moved to NTHU Gymnasium."
+      },
+      "2020": {
+        "title": "Social Enterprise",
+        "desc": "Created the Social Enterprise Group building on the Maker Group's foundation, promoting cross-disciplinary exchange."
+      },
+      "2021": {
+        "title": "Breaking Distance",
+        "desc": "Pandemic forced the event online; the Social Enterprise Group transformed into the Exchange Group with open themes for creative freedom."
+      },
+      "2022": {
+        "title": "Return",
+        "desc": "Post-pandemic return to in-person events. The Exchange Group continued evolving with upgraded participant experiences."
+      },
+      "2023": {
+        "title": "Ten Years",
+        "desc": "Tenth edition with six corporate partners (ETtoday, Google, KKCompany, LINE, NXP, TSMC). Launched the 10th Anniversary commemorative platform."
+      },
+      "2024": {
+        "title": "Evolution",
+        "desc": "Twelfth edition moved to NYCU Gymnasium. New partners Logitech and Chunghwa Telecom joined. Prize pools increased across all tracks."
+      },
+      "2025": {
+        "title": "Now",
+        "desc": "Thirteenth edition — continuing the hacker spirit, embracing new challenges and possibilities."
+      }
+    }
+  },
+  "tracks": {
+    "heading": "Two Competition Tracks",
+    "hacker": {
+      "title": "Hacker Track",
+      "subtitle": "\u9ed1\u5ba2\u7d44",
+      "desc": "Companies provide challenges and APIs. Teams of 3-5 university/graduate students build innovative solutions within 24 hours using corporate technology stacks.",
+      "features": ["Corporate challenges & tech support", "24-hour time limit", "University students only", "Teams of 3-5"]
+    },
+    "maker": {
+      "title": "Maker & Exchange Track",
+      "subtitle": "\u5275\u5ba2\u4ea4\u6d41\u7d44",
+      "desc": "Hsinchu City Government poses civic and social innovation challenges. Open to high school students through working professionals, encouraging cross-disciplinary collaboration with open themes.",
+      "features": ["Civic & social issues", "Cross-disciplinary teams", "All ages welcome", "Teams of 3-4"]
+    }
+  },
+  "mascot": {
+    "heading": "iN — The Hacker's Silhouette",
+    "desc": "The logo, born in 2020, centers on the 'i' and 'N' from innovation, outlining a hacker's silhouette — a student kneeling with a laptop, rushing toward a deadline. It's a scene anyone who has ever pulled an all-nighter coding can relate to.",
+    "gesture": "Signature gesture: Form '7' with both hands, palms outward, connecting left thumb to right index finger to trace the logo's outline."
+  },
+  "stats": {
+    "years": "13+",
+    "yearsLabel": "Years of History",
+    "participants": "500+",
+    "participantsLabel": "Annual Participants",
+    "companies": "6",
+    "companiesLabel": "Corporate Partners",
+    "projects": "100+",
+    "projectsLabel": "Projects Created"
+  },
+  "faq": {
+    "heading": "FAQ",
+    "items": [
+      {
+        "q": "Who can participate?",
+        "a": "The Hacker Track is limited to university and graduate students. The Maker & Exchange Track is open to high school students, university students, graduate students, and working professionals. Regardless of your background, if you're passionate about solving problems, you're welcome to join."
+      },
+      {
+        "q": "How do teams work? Can I participate alone?",
+        "a": "Teams require 3-5 members (Hacker Track) or 3-4 members (Maker & Exchange Track). You can form a team before registering or meet teammates at the event. Meichu Hackathon encourages teamwork and provides matchmaking opportunities."
+      },
+      {
+        "q": "Is there a registration fee?",
+        "a": "Yes, registration is approximately NT$700-900 per person plus a NT$200 deposit (refunded upon full participation). The fee covers meals, venue, and event materials."
+      },
+      {
+        "q": "Do I need to stay overnight at the venue?",
+        "a": "The main event runs for 24 hours with overnight sleeping space provided (in recent years, at a nearby building). You can stay and keep coding or rest and return refreshed."
+      },
+      {
+        "q": "What should I bring?",
+        "a": "Laptop, charger, power strip (recommended), personal toiletries, change of clothes, and plenty of enthusiasm. Wi-Fi, meals, and water are provided at the venue."
+      }
+    ]
+  },
+  "footer": {
+    "official": "Official Website",
+    "tagline": "Co-organized by students of National Tsing Hua University & National Yang Ming Chiao Tung University",
+    "madeWith": "Built with hacker spirit"
+  }
+}
