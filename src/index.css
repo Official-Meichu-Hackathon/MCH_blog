@@ -19,6 +19,16 @@
   --font-mono: "JetBrains Mono", "Space Mono", monospace;
 }
 
+:where([lang|="en"]) {
+  --font-display: "Fraunces", "Iowan Old Style", "Hoefler Text", Georgia, serif;
+  --font-body: "Inter Tight", "Noto Sans TC", system-ui, sans-serif;
+}
+
+:where([lang|="en"]) .font-display {
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  letter-spacing: -0.015em;
+}
+
 html {
   width: 100%;
   max-width: 100%;

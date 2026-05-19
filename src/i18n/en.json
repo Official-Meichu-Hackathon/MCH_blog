@@ -148,13 +148,12 @@
     ]
   },
   "footer": {
-    "heading": "Contact Us and Partners",
-    "partners": "Past partners: place a logo wall of previous sponsors such as Google, TSMC, AMD, and Logitech to show the event's industry credibility, if possible.",
+    "heading": "Contact Us",
     "emailLabel": "Official email",
     "email": "2026mchackathon@gmail.com",
-    "socialLabel": "Social updates:",
-    "facebook": "Facebook fan page Meichu Hackathon Facebook",
-    "instagram": "Instagram account Meichu Hackathon Instagram",
+    "socialLabel": "Social updates",
+    "facebook": "Meichu Hackathon on Facebook",
+    "instagram": "Meichu Hackathon on Instagram",
     "madeWith": "2026 Meichu Hackathon"
   }
 }

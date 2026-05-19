@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import LanguageToggle from './LanguageToggle'
 
@@ -7,8 +8,12 @@ type NavItem = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const navItems = t('nav.items', { returnObjects: true }) as NavItem[]
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language === 'zh' ? 'zh-TW' : 'en'
+  }, [i18n.language])
 
   return (
     <div className="relative min-h-screen">
@@ -59,7 +64,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h2 className="font-display text-2xl font-bold text-navy">{t('footer.heading')}</h2>
-              {/* <p className="mt-4 text-sm leading-relaxed text-slate/70">{t('footer.partners')}</p> */}
             </div>
             <div className="space-y-4">
               <div>

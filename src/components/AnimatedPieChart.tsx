@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 
 type Slice = {
   label: string
@@ -35,6 +35,33 @@ function describeArc(cx: number, cy: number, radius: number, startAngle: number,
   ].join(' ')
 }
 
+const articleVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: custom * 0.08, ease: [0.16, 1, 0.3, 1] },
+  }),
+}
+
+const pathVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.72 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.55, delay: custom, ease: [0.16, 1, 0.3, 1] },
+  }),
+}
+
+const legendItemVariants: Variants = {
+  hidden: { opacity: 0, x: 12 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.45, delay: custom, ease: [0.16, 1, 0.3, 1] },
+  }),
+}
+
 export default function AnimatedPieChart({ title, slices, index = 0 }: Props) {
   const { t } = useTranslation()
   const total = slices.reduce((sum, slice) => sum + slice.value, 0)
@@ -65,10 +92,11 @@ export default function AnimatedPieChart({ title, slices, index = 0 }: Props) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+      variants={articleVariants}
       className="rounded-lg border border-border bg-surface p-5"
     >
       <div className="flex items-start justify-between gap-4">
@@ -88,19 +116,13 @@ export default function AnimatedPieChart({ title, slices, index = 0 }: Props) {
             return (
               <motion.path
                 key={slice.label}
+                custom={index * 0.08 + sliceIndex * 0.08}
+                variants={pathVariants}
+                whileHover={{ scale: 1.035 }}
                 d={describeArc(50, 50, 43, startAngle, endAngle)}
                 fill={color}
                 stroke="#ffffff"
                 strokeWidth="1"
-                initial={{ opacity: 0, scale: 0.72 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.035 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.08 + sliceIndex * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
                 style={{ transformOrigin: '50px 50px' }}
               />
             )
@@ -114,14 +136,8 @@ export default function AnimatedPieChart({ title, slices, index = 0 }: Props) {
             return (
               <motion.li
                 key={slice.label}
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{
-                  duration: 0.45,
-                  delay: index * 0.08 + sliceIndex * 0.05,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
+                custom={index * 0.08 + sliceIndex * 0.05}
+                variants={legendItemVariants}
                 className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 text-sm"
               >
                 <span
