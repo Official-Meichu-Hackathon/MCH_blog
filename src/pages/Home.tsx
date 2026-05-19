@@ -1,11 +1,10 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import HeroBanner from '../components/HeroBanner'
 import SectionHeader from '../components/SectionHeader'
-import QuoteBlock from '../components/QuoteBlock'
-import Timeline from '../components/Timeline'
-import HighlightCard from '../components/HighlightCard'
 import FAQAccordion from '../components/FAQAccordion'
+import AnimatedPieChart from '../components/AnimatedPieChart'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -14,170 +13,172 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
 }
 
+type InfoCard = {
+  label: string
+  value: string
+}
+
+type AboutTrack = {
+  title: string
+  body: string
+}
+
+type TextCard = {
+  title: string
+  body: string
+}
+
+type ChartAsset = {
+  title: string
+  slices: {
+    label: string
+    value: number
+  }[]
+}
+
+function SectionShell({
+  id,
+  children,
+  tone = 'warm',
+}: {
+  id: string
+  children: React.ReactNode
+  tone?: 'warm' | 'light' | 'dark'
+}) {
+  const toneClass =
+    tone === 'dark'
+      ? 'bg-navy text-white'
+      : tone === 'light'
+        ? 'bg-surface-alt'
+        : 'bg-warm'
+
+  return (
+    <section id={id} className={`${toneClass} scroll-mt-24`}>
+      <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">{children}</div>
+    </section>
+  )
+}
+
 export default function Home() {
   const { t } = useTranslation()
+  const aboutTracks = t('about.tracks', { returnObjects: true }) as AboutTrack[]
+  const infoCards = t('eventInfo.cards', { returnObjects: true }) as InfoCard[]
+  const rewardItems = t('rewards.items', { returnObjects: true }) as TextCard[]
+  const reviewStats = t('review.stats', { returnObjects: true }) as TextCard[]
+  const charts = t('review.charts', { returnObjects: true }) as ChartAsset[]
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const id = window.location.hash.slice(1)
+      if (!id) return
+
+      requestAnimationFrame(() => {
+        const target = document.getElementById(id)
+        if (!target) return
+
+        const top = target.getBoundingClientRect().top + window.scrollY - 88
+        document.documentElement.scrollTop = top
+        document.body.scrollTop = top
+      })
+    }
+
+    scrollToHash()
+    window.addEventListener('hashchange', scrollToHash)
+    return () => window.removeEventListener('hashchange', scrollToHash)
+  }, [])
 
   return (
     <>
       <HeroBanner />
 
-      {/* Intro */}
-      <section className="mx-auto max-w-3xl px-6 pt-20 md:pt-28">
-        <motion.div {...fadeUp}>
-          <SectionHeader section="intro" field="heading" mono="001" />
-          <p className="text-lg md:text-xl leading-relaxed text-slate/90">{t('intro.body')}</p>
-          <p className="mt-4 font-display text-lg font-semibold text-teal">{t('intro.highlight')}</p>
+      <SectionShell id="about">
+        <SectionHeader section="about" field="heading" mono="2" />
+        <motion.div {...fadeUp} className="max-w-3xl">
+          <p className="text-base leading-relaxed text-slate/90 md:text-lg">{t('about.body')}</p>
         </motion.div>
-      </section>
-
-      {/* Stats */}
-      <section className="mx-auto max-w-4xl px-6 py-16 md:py-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {(['years', 'participants', 'companies', 'projects'] as const).map((key, i) => (
-            <HighlightCard
-              key={key}
-              value={t(`stats.${key}`)}
-              label={t(`stats.${key}Label`)}
-              index={i}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* What Is */}
-      <section className="mx-auto max-w-3xl px-6 py-12 md:py-20">
-        <SectionHeader section="whatIs" field="heading" mono="002" />
-
-        <div className="space-y-8">
-          <motion.div {...fadeUp} className="grid grid-cols-2 gap-6">
-            <div className="rounded-lg border border-teal/20 bg-teal/5 p-6">
-              <span className="font-display text-3xl font-bold text-teal">{t('whatIs.mei.title')}</span>
-              <p className="mt-1 text-sm font-medium text-navy">{t('whatIs.mei.school')}</p>
-              <p className="mt-1 text-xs text-muted">{t('whatIs.mei.origin')}</p>
-            </div>
-            <div className="rounded-lg border border-teal/20 bg-teal/5 p-6">
-              <span className="font-display text-3xl font-bold text-teal">{t('whatIs.chu.title')}</span>
-              <p className="mt-1 text-sm font-medium text-navy">{t('whatIs.chu.school')}</p>
-              <p className="mt-1 text-xs text-muted">{t('whatIs.chu.origin')}</p>
-            </div>
-          </motion.div>
-
-          <motion.div {...fadeUp} className="rounded-lg border border-border/60 bg-surface p-6 md:p-8">
-            <h3 className="font-display text-xl font-bold text-navy mb-3">{t('whatIs.hackathon.title')}</h3>
-            <div className="space-y-2 text-sm text-slate/80">
-              <p><span className="font-mono text-teal text-xs mr-2">HACK</span>{t('whatIs.hackathon.hack')}</p>
-              <p><span className="font-mono text-teal text-xs mr-2">MARATHON</span>{t('whatIs.hackathon.marathon')}</p>
-            </div>
-          </motion.div>
-
-          <motion.div {...fadeUp}>
-            <p className="text-base leading-relaxed text-slate/80">{t('whatIs.philosophy')}</p>
-          </motion.div>
-
-          <motion.div {...fadeUp} className="flex flex-wrap gap-3">
-            {(['innovation', 'efficiency', 'teamwork', 'exchange'] as const).map((val) => (
-              <span
-                key={val}
-                className="rounded-full border border-teal/30 bg-teal/5 px-4 py-1.5 text-sm font-medium text-teal-dark"
-              >
-                {t(`whatIs.values.${val}`)}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Origin */}
-      <section className="mx-auto max-w-3xl px-6 py-12 md:py-20">
-        <SectionHeader section="origin" field="heading" mono="003" />
-        <motion.div {...fadeUp}>
-          <p className="text-base leading-relaxed text-slate/80">{t('origin.story')}</p>
-        </motion.div>
-        <QuoteBlock quote={t('origin.quote')} author={t('origin.quoteAuthor')} />
-      </section>
-
-      {/* Timeline */}
-      <section className="mx-auto max-w-4xl px-6 py-12 md:py-20">
-        <SectionHeader section="timeline" field="heading" mono="004" />
-        <Timeline />
-      </section>
-
-      {/* Tracks */}
-      <section className="mx-auto max-w-4xl px-6 py-12 md:py-20">
-        <SectionHeader section="tracks" field="heading" mono="005" />
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {(['hacker', 'maker'] as const).map((track) => (
-            <motion.div
-              key={track}
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {aboutTracks.map((track, index) => (
+            <motion.article
+              key={track.title}
               {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: index * 0.08 }}
               className={`rounded-lg border p-6 md:p-8 ${
-                track === 'hacker'
+                index === 0
                   ? 'border-navy/20 bg-navy/[0.03]'
-                  : 'border-teal/20 bg-teal/[0.03]'
+                  : 'border-teal/20 bg-teal/[0.04]'
               }`}
             >
-              <div className="flex items-baseline gap-3 mb-1">
-                <h3 className="font-display text-xl font-bold text-navy">{t(`tracks.${track}.title`)}</h3>
-                <span className="font-mono text-xs text-muted">{t(`tracks.${track}.subtitle`)}</span>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-slate/70">{t(`tracks.${track}.desc`)}</p>
-              <ul className="mt-4 space-y-1.5">
-                {(
-                  t(`tracks.${track}.features`, { returnObjects: true }) as string[]
-                ).map((feat) => (
-                  <li key={feat} className="flex items-center gap-2 text-sm text-slate/80">
-                    <span className={`h-1.5 w-1.5 rounded-full shrink-0 ${track === 'hacker' ? 'bg-navy' : 'bg-teal'}`} />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                {index === 0 ? 'Track 01' : 'Track 02'}
+              </p>
+              <h3 className="mt-4 font-display text-2xl font-bold leading-tight text-navy">{track.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate/75 md:text-base">{track.body}</p>
+            </motion.article>
           ))}
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Mascot */}
-      <section className="mx-auto max-w-3xl px-6 py-12 md:py-20">
-        <SectionHeader section="mascot" field="heading" mono="006" />
-        <motion.div {...fadeUp} className="rounded-lg border border-border/60 bg-surface p-6 md:p-8">
-          <p className="text-base leading-relaxed text-slate/80">{t('mascot.desc')}</p>
-          <div className="mt-6 rounded border border-teal/20 bg-teal/5 px-4 py-3">
-            <p className="text-sm text-slate/70">
-              <span className="font-mono text-xs text-teal mr-2">SIGNATURE</span>
-              {t('mascot.gesture')}
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 py-12 md:py-20">
-        <SectionHeader section="faq" field="heading" mono="007" />
-        <FAQAccordion
-          items={
-            t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
-          }
-        />
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="bg-navy text-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-          <motion.div {...fadeUp}>
-            <h2 className="font-display text-3xl md:text-4xl font-bold">{t('hero.title')}</h2>
-            <p className="mt-4 text-white/60">{t('hero.subtitle')}</p>
-            <a
-              href="https://www.meichuhackathon.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full border-2 border-teal px-8 py-3 font-medium text-teal transition-colors hover:bg-teal hover:text-white"
+      <SectionShell id="event-info">
+        <SectionHeader section="eventInfo" field="heading" mono="3" />
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {infoCards.map((card, index) => (
+            <motion.article
+              key={card.label}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: index * 0.04 }}
+              className="rounded-lg border border-border/70 bg-surface p-5"
             >
-              {t('footer.official')} &rarr;
-            </a>
-          </motion.div>
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{card.label}</p>
+              <p className="mt-3 font-medium leading-relaxed text-navy">{card.value}</p>
+            </motion.article>
+          ))}
         </div>
-      </section>
+      </SectionShell>
+
+      <SectionShell id="rewards" tone="dark">
+        <SectionHeader section="rewards" field="heading" mono="4" className="[&_h2]:text-white" />
+        <div className="grid gap-5 md:grid-cols-2">
+          {rewardItems.map((item, index) => (
+            <motion.article
+              key={item.title}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: index * 0.05 }}
+              className="rounded-lg border border-white/10 bg-white/[0.06] p-6"
+            >
+              <h3 className="font-display text-2xl font-bold leading-tight text-teal-light">{item.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">{item.body}</p>
+            </motion.article>
+          ))}
+        </div>
+      </SectionShell>
+
+      <SectionShell id="review" tone="light">
+        <SectionHeader section="review" field="heading" mono="5" />
+        <div className="grid gap-5 lg:grid-cols-3">
+          {reviewStats.map((item, index) => (
+            <motion.article
+              key={item.title}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: index * 0.06 }}
+              className="rounded-lg border border-border bg-surface p-6"
+            >
+              <h3 className="font-display text-xl font-bold leading-tight text-navy">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate/75">{item.body}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {charts.map((chart, index) => (
+            <AnimatedPieChart key={chart.title} title={chart.title} slices={chart.slices} index={index} />
+          ))}
+        </div>
+      </SectionShell>
+
+      <SectionShell id="faq">
+        <SectionHeader section="faq" field="heading" mono="6" />
+        <FAQAccordion items={t('faq.items', { returnObjects: true }) as { q: string; a: string }[]} />
+      </SectionShell>
     </>
   )
 }

@@ -1,161 +1,160 @@
 {
+  "nav": {
+    "brand": "Meichu Hackathon 2026",
+    "summary": "Navigation: About Meichu Hackathon | Event Info | Rewards | Past Highlights | FAQ",
+    "items": [
+      { "label": "About Meichu Hackathon", "href": "#about" },
+      { "label": "Event Info", "href": "#event-info" },
+      { "label": "Rewards", "href": "#rewards" },
+      { "label": "Past Highlights", "href": "#review" },
+      { "label": "FAQ", "href": "#faq" }
+    ]
+  },
   "hero": {
-    "title": "Opening Meichu",
-    "subtitle": "Discover Taiwan's Most Influential Student Hackathon",
-    "tagline": "13th Edition — 2025 Hsinchu x Meichu Hackathon",
-    "scroll": "Scroll to explore"
+    "sectionLabel": "1. Home",
+    "title": "2026 Meichu Hackathon | What is a hackathon? Features and event info at a glance.",
+    "primaryCta": "View 2026 Event Info",
+    "secondaryCta": "Follow Instagram for Updates"
   },
-  "intro": {
-    "heading": "Between Two Universities, A Hackers' Gathering",
-    "body": "Every October, a special energy surges through Hsinchu's autumn breeze — hundreds of university students, makers, and developers from across Taiwan gather together, building impressive works in 24 hours. This is no ordinary competition. Here, exchange outweighs competition, and inspiration outweighs prize money. This is the Meichu Hackathon.",
-    "highlight": "Exchange outweighs competition, inspiration outweighs prize money."
-  },
-  "whatIs": {
+  "about": {
     "heading": "What is Meichu Hackathon?",
-    "mei": {
-      "title": "Mei",
-      "school": "National Tsing Hua University",
-      "origin": "Commemorating former NTHU President Mei Yi-Qi"
-    },
-    "chu": {
-      "title": "Chu",
-      "school": "National Yang Ming Chiao Tung University",
-      "origin": "Commemorating former NYCU President Ling Zhu-Ming"
-    },
-    "hackathon": {
-      "title": "Hackathon",
-      "hack": "Hack — an exploratory programming process; the hacker spirit of valuing freedom and solving problems",
-      "marathon": "Marathon — sustained creative endurance"
-    },
-    "philosophy": "Meichu Hackathon is not a profit-driven competition. It embraces hacker spirit — valuing freedom and a passion for problem-solving. Anyone who boldly challenges themselves and focuses on their craft can be called a hacker, regardless of profession. The organization emphasizes innovation, efficiency, and teamwork, and prioritizes exchange over competition — making it more of a collaborative gathering than a cutthroat contest.",
-    "values": {
-      "innovation": "Innovation",
-      "efficiency": "Efficiency",
-      "teamwork": "Teamwork",
-      "exchange": "Exchange > Competition"
-    }
-  },
-  "origin": {
-    "heading": "2013: Where It All Began",
-    "story": "In 2013, a group participated in a one-day hackathon that included Professor Wu Yi-Cheng of NCTU's CS department, Jserv with a heart-rate measurement band, and a senior who provided a company API. That moment, an idea sparked: \"What if we collaborated with real companies?\" That small seed of inspiration led to the first Meichu Hackathon.",
-    "quote": "What if we collaborated with real companies?",
-    "quoteAuthor": "The spark of 2013"
-  },
-  "timeline": {
-    "heading": "Thirteen Years of Evolution",
-    "years": {
-      "2013": {
-        "title": "Founded",
-        "desc": "Meichu Hackathon was born, co-organized by students from NTHU and NYCU, starting a hacker tradition."
+    "body": "Meichu Hackathon is a two-day, one-night cross-disciplinary implementation competition. Student teams turn abstract ideas into minimum viable products (MVPs) within limited time. The competition has two tracks:",
+    "tracks": [
+      {
+        "title": "Hacker Track",
+        "body": "The Hacker Track is built around challenges from corporate partners, who provide dedicated resources such as APIs or hardware. Participants need programming skills and solve corporate problems through technical implementation."
       },
-      "2014": {
-        "title": "Taking Root",
-        "desc": "The second edition saw maturing competition formats, established corporate partnerships, and steady growth in participants."
-      },
-      "2015": {
-        "title": "Expanding",
-        "desc": "More corporate partners joined, with increasingly diverse challenges. Participants surpassed one hundred."
-      },
-      "2016": {
-        "title": "Deepening",
-        "desc": "Continued introduction of new corporate partners with challenges closer to industry needs and refined competition formats."
-      },
-      "2017": {
-        "title": "Milestone",
-        "desc": "The fifth edition marked a milestone as scale continued to grow and Meichu Hackathon built recognition among students."
-      },
-      "2018": {
-        "title": "Maturing",
-        "desc": "Competition formats and scale stabilized. Pre-event activities began emerging, laying groundwork for future diversification."
-      },
-      "2019": {
-        "title": "Crossing Boundaries",
-        "desc": "Partnered with Hsinchu City Government to establish the Maker Group for social issues; launched pre-event workshops; venue moved to NTHU Gymnasium."
-      },
-      "2020": {
-        "title": "Social Enterprise",
-        "desc": "Created the Social Enterprise Group building on the Maker Group's foundation, promoting cross-disciplinary exchange."
-      },
-      "2021": {
-        "title": "Breaking Distance",
-        "desc": "Pandemic forced the event online; the Social Enterprise Group transformed into the Exchange Group with open themes for creative freedom."
-      },
-      "2022": {
-        "title": "Return",
-        "desc": "Post-pandemic return to in-person events. The Exchange Group continued evolving with upgraded participant experiences."
-      },
-      "2023": {
-        "title": "Ten Years",
-        "desc": "Tenth edition with six corporate partners (ETtoday, Google, KKCompany, LINE, NXP, TSMC). Launched the 10th Anniversary commemorative platform."
-      },
-      "2024": {
-        "title": "Evolution",
-        "desc": "Twelfth edition moved to NYCU Gymnasium. New partners Logitech and Chunghwa Telecom joined. Prize pools increased across all tracks."
-      },
-      "2025": {
-        "title": "Now",
-        "desc": "Thirteenth edition — continuing the hacker spirit, embracing new challenges and possibilities."
+      {
+        "title": "Maker Exchange Track",
+        "body": "The Maker Exchange Track is proposed by the Hsinchu City Government. It does not require programming background and encourages students from different departments to use their expertise together to propose diverse solutions for social issues."
       }
-    }
+    ]
   },
-  "tracks": {
-    "heading": "Two Competition Tracks",
-    "hacker": {
-      "title": "Hacker Track",
-      "subtitle": "\u9ed1\u5ba2\u7d44",
-      "desc": "Companies provide challenges and APIs. Teams of 3-5 university/graduate students build innovative solutions within 24 hours using corporate technology stacks.",
-      "features": ["Corporate challenges & tech support", "24-hour time limit", "University students only", "Teams of 3-5"]
-    },
-    "maker": {
-      "title": "Maker & Exchange Track",
-      "subtitle": "\u5275\u5ba2\u4ea4\u6d41\u7d44",
-      "desc": "Hsinchu City Government poses civic and social innovation challenges. Open to high school students through working professionals, encouraging cross-disciplinary collaboration with open themes.",
-      "features": ["Civic & social issues", "Cross-disciplinary teams", "All ages welcome", "Teams of 3-4"]
-    }
+  "eventInfo": {
+    "heading": "2026 Basic Event Info",
+    "note": "This block is designed as a card layout so yearly data can be quickly replaced.",
+    "cards": [
+      { "label": "Date", "value": "(Tentative) 2026/09/19 (Sat) - 2026/09/20 (Sun)" },
+      { "label": "Venue", "value": "(Tentative) National Yang Ming Chiao Tung University Gymnasium" },
+      { "label": "Eligible participants", "value": "Students from colleges and universities across Taiwan. The Maker Exchange Track also opens to high school students." },
+      { "label": "Registration fee", "value": "(Tentative) NT$1,000 per person, plus a NT$100 deposit" },
+      { "label": "Special discount", "value": "To encourage cross-disciplinary teams, teams with three or more different departments receive NT$100 off per person." },
+      { "label": "Low-income support", "value": "Registration is free for low- and middle-low-income participants." }
+    ]
   },
-  "mascot": {
-    "heading": "iN — The Hacker's Silhouette",
-    "desc": "The logo, born in 2020, centers on the 'i' and 'N' from innovation, outlining a hacker's silhouette — a student kneeling with a laptop, rushing toward a deadline. It's a scene anyone who has ever pulled an all-nighter coding can relate to.",
-    "gesture": "Signature gesture: Form '7' with both hands, palms outward, connecting left thumb to right index finger to trace the logo's outline."
-  },
-  "stats": {
-    "years": "13+",
-    "yearsLabel": "Years of History",
-    "participants": "500+",
-    "participantsLabel": "Annual Participants",
-    "companies": "6",
-    "companiesLabel": "Corporate Partners",
-    "projects": "100+",
-    "projectsLabel": "Projects Created"
-  },
-  "faq": {
-    "heading": "FAQ",
+  "rewards": {
+    "heading": "What can participants gain?",
     "items": [
       {
-        "q": "Who can participate?",
-        "a": "The Hacker Track is limited to university and graduate students. The Maker & Exchange Track is open to high school students, university students, graduate students, and working professionals. Regardless of your background, if you're passionate about solving problems, you're welcome to join."
+        "title": "Direct company access",
+        "body": "Pre-event exclusive workshops and company visits, plus on-site technical staff during the competition, help you access the latest industry resources directly."
       },
       {
-        "q": "How do teams work? Can I participate alone?",
-        "a": "Teams require 3-5 members (Hacker Track) or 3-4 members (Maker & Exchange Track). You can form a team before registering or meet teammates at the event. Meichu Hackathon encourages teamwork and provides matchmaking opportunities."
+        "title": "Prize money beyond ten thousand",
+        "body": "Hacker Track: first place selected by each company can receive NT$25,000 and internship or interview opportunities, with a further chance to compete for the Meichu Grand Prize of up to NT$30,000."
       },
       {
-        "q": "Is there a registration fee?",
-        "a": "Yes, registration is approximately NT$700-900 per person plus a NT$200 deposit (refunded upon full participation). The fee covers meals, venue, and event materials."
+        "title": "Maker Exchange awards",
+        "body": "Maker Exchange Track: the top prize reaches NT$50,000, with multiple creative awards as well."
       },
       {
-        "q": "Do I need to stay overnight at the venue?",
-        "a": "The main event runs for 24 hours with overnight sleeping space provided (in recent years, at a nearby building). You can stay and keep coding or rest and return refreshed."
+        "title": "A packed extreme challenge",
+        "body": "During the two-day, one-night implementation period, dinner, midnight snacks, and rich on-site entertainment are provided."
+      }
+    ]
+  },
+  "review": {
+    "heading": "Past Event Highlights",
+    "totalPeople": "{{count}} people total",
+    "stats": [
+      {
+        "title": "A benchmark scale",
+        "body": "In 2025, total participants reached 242, and total venue foot traffic reached 4,283 visits."
       },
       {
-        "q": "What should I bring?",
-        "a": "Laptop, charger, power strip (recommended), personal toiletries, change of clothes, and plenty of enthusiasm. Wi-Fi, meals, and water are provided at the venue."
+        "title": "Cross-disciplinary is the point",
+        "body": "Although about 60% of participants came from electrical engineering, computer science, and engineering colleges, management, design, biomedical, and other fields also had strong representation. The Maker Exchange Track attracted nearly half of its participants from diverse departments."
+      },
+      {
+        "title": "Top campuses gathered",
+        "body": "The event brings together elite students from National Tsing Hua University, National Yang Ming Chiao Tung University, National Taiwan University, National Cheng Kung University, National Taiwan Normal University, National Central University, and other top universities across Taiwan."
+      }
+    ],
+    "charts": [
+      {
+        "title": "2025 Participant School Distribution",
+        "slices": [
+          { "label": "National Taiwan University", "value": 11 },
+          { "label": "National Tsing Hua University", "value": 66 },
+          { "label": "National Taiwan Normal University", "value": 6 },
+          { "label": "National Yang Ming Chiao Tung University", "value": 125 },
+          { "label": "National Cheng Kung University", "value": 12 },
+          { "label": "National Central University", "value": 7 },
+          { "label": "Other", "value": 15 }
+        ]
+      },
+      {
+        "title": "2025 Hacker Track College Distribution",
+        "slices": [
+          { "label": "Electrical Engineering and Computer Science", "value": 110 },
+          { "label": "Engineering", "value": 16 },
+          { "label": "Medical fields", "value": 9 },
+          { "label": "Management", "value": 7 },
+          { "label": "Other", "value": 49 }
+        ]
+      },
+      {
+        "title": "2025 Maker Track College Distribution",
+        "slices": [
+          { "label": "Electrical Engineering and Computer Science", "value": 29 },
+          { "label": "Engineering", "value": 14 },
+          { "label": "Medical fields", "value": 2 },
+          { "label": "Management", "value": 4 },
+          { "label": "Other", "value": 2 }
+        ]
+      },
+      {
+        "title": "2025 Participant Year Distribution",
+        "slices": [
+          { "label": "Freshman", "value": 6 },
+          { "label": "Sophomore", "value": 52 },
+          { "label": "Junior", "value": 79 },
+          { "label": "Senior", "value": 74 },
+          { "label": "Fifth year", "value": 4 },
+          { "label": "Graduate", "value": 27 }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Q: Can I participate if I cannot code?",
+        "a": "A: Absolutely. We have the Maker Exchange Track and strongly encourage cross-disciplinary teams. A strong project also needs planning, design, and business analysis talent."
+      },
+      {
+        "q": "Q: Is the schedule only two short days?",
+        "a": "A: Not only that. Before the official competition, we plan company visits and workshops for getting familiar with company resources, so you can receive technical guidance before the event."
+      },
+      {
+        "q": "Q: Who owns the intellectual property of the work?",
+        "a": "A: The ownership of the code and project belongs entirely to the participants. Corporate partners and organizers only hold the right to publicly display the works and creative ideas."
+      },
+      {
+        "q": "Q: What if I do not have teammates?",
+        "a": "A: We have a Facebook group to help match participants. Search for \"Match at MCH\" and join the group to find the best teammates for you."
       }
     ]
   },
   "footer": {
-    "official": "Official Website",
-    "tagline": "Co-organized by students of National Tsing Hua University & National Yang Ming Chiao Tung University",
-    "madeWith": "Built with hacker spirit"
+    "heading": "Contact Us and Partners",
+    "partners": "Past partners: place a logo wall of previous sponsors such as Google, TSMC, AMD, and Logitech to show the event's industry credibility, if possible.",
+    "emailLabel": "Official email",
+    "email": "2026mchackathon@gmail.com",
+    "socialLabel": "Social updates:",
+    "facebook": "Facebook fan page Meichu Hackathon Facebook",
+    "instagram": "Instagram account Meichu Hackathon Instagram",
+    "madeWith": "2026 Meichu Hackathon"
   }
 }

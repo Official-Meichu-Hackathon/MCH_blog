@@ -1,56 +1,89 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+
+const HERO_IMAGES = [
+  '/hero/hero-01.jpg',
+  '/hero/hero-02.jpg',
+  '/hero/hero-03.jpg',
+  '/hero/hero-04.jpg',
+  '/hero/hero-05.jpg',
+  '/hero/hero-06.jpg',
+  '/hero/hero-07.jpg',
+  '/hero/hero-08.jpg',
+  '/hero/hero-09.jpg',
+  '/hero/hero-10.jpg',
+  '/hero/hero-11.jpg',
+]
 
 export default function HeroBanner() {
   const { t } = useTranslation()
+  const [activeImage, setActiveImage] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % HERO_IMAGES.length)
+    }, 2600)
+
+    return () => window.clearInterval(timer)
+  }, [])
 
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
-      <div className="absolute inset-0 opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 20% 50%, #0d9488 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1a1a2e 0%, transparent 40%), radial-gradient(circle at 60% 80%, #0d9488 0%, transparent 30%)',
-          }}
-        />
+    <section
+      id="home"
+      className="relative min-h-[calc(100svh-104px)] overflow-hidden bg-navy text-white lg:min-h-[calc(100svh-68px)]"
+    >
+      <div className="absolute inset-0 bg-navy">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={HERO_IMAGES[activeImage]}
+            className="absolute inset-0 bg-cover bg-center [will-change:transform]"
+            style={{ backgroundImage: `url(${HERO_IMAGES[activeImage]})` }}
+            initial={{ x: '100%', scale: 1.02 }}
+            animate={{ x: '0%', scale: 1 }}
+            exit={{ x: '-100%', scale: 1.01 }}
+            transition={{
+              duration: 0.58,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+          />
+        </AnimatePresence>
       </div>
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(26,26,46,0.96)_0%,rgba(26,26,46,0.82)_48%,rgba(26,26,46,0.42)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-transparent" />
 
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }} />
-
-      <div className="relative mx-auto max-w-5xl px-6 py-28 md:py-40">
+      <div className="relative mx-auto flex min-h-[calc(100svh-104px)] max-w-5xl flex-col justify-center px-6 py-14 md:py-16 lg:min-h-[calc(100svh-68px)]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-teal-light mb-6">
-            {t('hero.tagline')}
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-light">
+            {t('hero.sectionLabel')}
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+          <h1 className="mt-5 font-display text-4xl font-bold leading-tight tracking-normal md:text-5xl lg:text-6xl">
             {t('hero.title')}
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/70 max-w-lg font-light leading-relaxed">
-            {t('hero.subtitle')}
-          </p>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="mt-16 flex items-center gap-2 text-white/30"
-        >
-          <span className="text-xs font-mono tracking-widest uppercase">{t('hero.scroll')}</span>
-          <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="animate-bounce">
-            <path d="M8 4L8 20M8 20L2 14M8 20L14 14" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#event-info"
+              className="inline-flex items-center justify-center rounded-full bg-teal px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-light"
+            >
+              {t('hero.primaryCta')}
+            </a>
+            <a
+              href="https://www.instagram.com/mc_hackathon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition-colors hover:border-teal-light hover:text-teal-light"
+            >
+              {t('hero.secondaryCta')}
+            </a>
+          </div>
         </motion.div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/40 to-transparent" />
     </section>
   )
 }
