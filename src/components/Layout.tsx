@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h2 className="font-display text-2xl font-bold text-navy">{t('footer.heading')}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate/70">{t('footer.partners')}</p>
+              {/* <p className="mt-4 text-sm leading-relaxed text-slate/70">{t('footer.partners')}</p> */}
             </div>
             <div className="space-y-4">
               <div>
