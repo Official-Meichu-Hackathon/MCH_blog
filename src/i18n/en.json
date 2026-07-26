@@ -34,10 +34,10 @@
     "heading": "2026 Basic Event Info",
     "note": "This block is designed as a card layout so yearly data can be quickly replaced.",
     "cards": [
-      { "label": "Date", "value": "(Tentative) 2026/09/19 (Sat) - 2026/09/20 (Sun)" },
-      { "label": "Venue", "value": "(Tentative) National Yang Ming Chiao Tung University Gymnasium" },
+      { "label": "Date", "value": "2026/09/19 (Sat) - 2026/09/20 (Sun)" },
+      { "label": "Venue", "value": "National Tsing Hua University Gymnasium" },
       { "label": "Eligible participants", "value": "Students from colleges and universities across Taiwan. The Maker Exchange Track also opens to high school students." },
-      { "label": "Registration fee", "value": "(Tentative) NT$1,000 per person, plus a NT$100 deposit" },
+      { "label": "Registration fee", "value": "NT$1,000 per person, plus a NT$100 deposit" },
       { "label": "Special discount", "value": "To encourage cross-disciplinary teams, teams with three or more different departments receive NT$100 off per person." },
       { "label": "Low-income support", "value": "Registration is free for low- and middle-low-income participants." }
     ]
