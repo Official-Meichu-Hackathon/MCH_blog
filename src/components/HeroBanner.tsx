@@ -68,8 +68,14 @@ export default function HeroBanner() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#event-info"
+              href="https://2026.meichuhackathon.org/"
               className="inline-flex items-center justify-center rounded-full bg-teal px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-light"
+            >
+              {t('hero.signupCta')}
+            </a>
+            <a
+              href="#event-info"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition-colors hover:border-teal-light hover:text-teal-light"
             >
               {t('hero.primaryCta')}
             </a>

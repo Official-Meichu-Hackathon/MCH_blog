@@ -1,18 +1,20 @@
 {
   "nav": {
     "brand": "Meichu Hackathon 2026",
-    "summary": "Navigation: About Meichu Hackathon | Event Info | Rewards | Past Highlights | FAQ",
+    "summary": "Navigation: About Meichu Hackathon | Event Info | Rewards | Past Highlights | FAQ | Sign Up",
     "items": [
       { "label": "About Meichu Hackathon", "href": "#about" },
       { "label": "Event Info", "href": "#event-info" },
       { "label": "Rewards", "href": "#rewards" },
       { "label": "Past Highlights", "href": "#review" },
-      { "label": "FAQ", "href": "#faq" }
+      { "label": "FAQ", "href": "#faq" },
+      { "label": "Sign Up", "href": "https://2026.meichuhackathon.org/" }
     ]
   },
   "hero": {
     "sectionLabel": "1. Home",
     "title": "2026 Meichu Hackathon | What is a hackathon? Features and event info at a glance.",
+    "signupCta": "Sign Up for 2026 Meichu Hackathon",
     "primaryCta": "View 2026 Event Info",
     "secondaryCta": "Follow Instagram for Updates"
   },
@@ -151,6 +153,8 @@
     "heading": "Contact Us",
     "emailLabel": "Official email",
     "email": "2026mchackathon@gmail.com",
+    "siteLabel": "Official website",
+    "officialSite": "2026 Meichu Hackathon Official Site",
     "socialLabel": "Social updates",
     "facebook": "Meichu Hackathon on Facebook",
     "instagram": "Meichu Hackathon on Instagram",

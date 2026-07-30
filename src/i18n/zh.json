@@ -1,18 +1,20 @@
 {
   "nav": {
     "brand": "梅竹黑客松 2026",
-    "summary": "導覽選單： 關於梅竹黑客松｜活動資訊｜豐厚獎項｜歷年回顧｜常見問題",
+    "summary": "導覽選單： 關於梅竹黑客松｜活動資訊｜豐厚獎項｜歷年回顧｜常見問題｜前往報名",
     "items": [
       { "label": "關於梅竹黑客松", "href": "#about" },
       { "label": "活動資訊", "href": "#event-info" },
       { "label": "豐厚獎項", "href": "#rewards" },
       { "label": "歷年回顧", "href": "#review" },
-      { "label": "常見問題", "href": "#faq" }
+      { "label": "常見問題", "href": "#faq" },
+      { "label": "前往報名", "href": "https://2026.meichuhackathon.org/" }
     ]
   },
   "hero": {
     "sectionLabel": "1. 主頁",
     "title": "2026 梅竹黑客松｜黑客松是什麼？梅竹黑客松 特色、活動資訊總整理！",
+    "signupCta": "立即報名 2026 梅竹黑客松",
     "primaryCta": "立即查看 2026 賽事資訊",
     "secondaryCta": "追蹤 IG 鎖定最新消息"
   },
@@ -151,6 +153,8 @@
     "heading": "聯絡我們",
     "emailLabel": "官方信箱",
     "email": "2026mchackathon@gmail.com",
+    "siteLabel": "官方網站",
+    "officialSite": "2026 梅竹黑客松官方網站",
     "socialLabel": "社群追蹤",
     "facebook": "梅竹黑客松 Facebook 粉絲專頁",
     "instagram": "梅竹黑客松 Instagram",

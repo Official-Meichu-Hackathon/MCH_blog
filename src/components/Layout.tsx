@@ -79,6 +79,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                  {t('footer.siteLabel')}
+                </p>
+                <a
+                  href="https://2026.meichuhackathon.org/"
+                  className="mt-1 block font-medium text-navy transition-colors hover:text-teal"
+                >
+                  {t('footer.officialSite')}
+                </a>
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
                   {t('footer.socialLabel')}
                 </p>
                 <div className="mt-2 flex flex-col gap-1">
